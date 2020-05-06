@@ -1,0 +1,40 @@
+extends ./layouts/common
+block content
+
+  h1 Products
+  div(class="card-columns")
+   each product in products
+     div(class="card")
+      .card(style='width: 18rem;',)
+      img.card-img-top(src='https://loremflickr.com/320/240/dog', alt='dog', style="width:100%")
+      div(class="card-block text-right")
+        .card-body
+          h5.card-title= product.name
+          p.card-text
+            product.description
+          a.btn.btn-primary(href='/cart/add/' + product.id) Add to card
+
+  nav(aria-label='Page navigation example')
+  ul.pagination.justify-content-end
+    li.page-item-disabled
+      a.page-link(href='#') Previous
+    li.page-item
+      a.page-link(href='?page=1') 1
+    li.page-item
+      a.page-link(href='?page=2') 2
+    li.page-item
+      a.page-link(href='?page=3') 3
+    li.page-item
+      a.page-link(href='?page=4') 4
+    li.page-item
+      a.page-link(href='?page=5') 5
+    li.page-item
+      a.page-link(href='?page=6') 6
+    li.page-item
+      a.page-link(href='?page=7') 7
+    li.page-item
+      a.page-link(href='?page=8') 8
+    li.page-item
+      a.page-link(href='?page=9') 9
+    li.page-item
+      a.page-link(href='#') Next
